@@ -1,0 +1,9 @@
+{
+    "inputFolder": "path/to/input",
+    "outputFolder": "path/to/output",
+    "functionSwitcher": {
+        "addDoubleSpace": true,
+        "addLineBreak": true
+    },
+    "ignoreFileName": []
+}
