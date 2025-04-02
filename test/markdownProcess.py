@@ -56,7 +56,7 @@ def main():
                 processed_lines.append(line)
             elif len(stripped_line) == 0:
                 processed_lines.append(line)
-            elif stripped_line[0] in ['#', '+', '-', '*', '|']:
+            elif stripped_line[0] in ['#', '+', '-', '|']:
                 processed_lines.append(line)
             else:
                 processed_lines.append(process_line(line))
