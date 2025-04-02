@@ -23,7 +23,7 @@ def main():
     global config
 
     # Load configuration
-    with open('config.json', 'r') as c_f:
+    with open('../../config.json', 'r') as c_f:
         config = json.load(c_f)
 
     input_folder = Path(config["inputFolder"])
