@@ -1,0 +1,12 @@
+{
+    "inputFolder": "D:/.000AAA/Blog",
+    "outputFolder": "D:/Project/website/blog-content/posts",
+    "functionSwitcher": {
+        "addDoubleSpace": true,
+        "addLineBreak": false
+    },
+    "ignoreFileName": [
+        "Template",
+        "controller"
+    ]
+}
