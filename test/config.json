@@ -1,6 +1,7 @@
 {
-    "inputFolder": "D:/.000AAA/Blog",
-    "outputFolder": "D:/Project/website/blog-content/posts",
+    "gitFolder": "D:/Project/website/blog-content/",
+    "obsidianStoreFolder": "D:/.000AAA/Blog",
+    "blogMarkdownFolder": "D:/Project/website/blog-content/posts",
     "functionSwitcher": {
         "addDoubleSpace": true,
         "addLineBreak": false

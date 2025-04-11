@@ -20,22 +20,21 @@ def main():
     """
     Main function that executes the file processing workflow.
     """
-    global config
-
     # Load configuration
+    global config
     with open('../../config.json', 'r') as c_f:
         config = json.load(c_f)
-
-    input_folder = Path(config["inputFolder"])
-    output_folder = Path(config["outputFolder"])
+    obsidianStoreFolder = Path(config["obsidianStoreFolder"])
+    blogMarkdownFolder = Path(config["blogMarkdownFolder"])
 
     # Process all markdown files in input directory
-    for md_file in input_folder.rglob('*.md'):
+    for md_file in obsidianStoreFolder.rglob('*.md'):
         # Skip specified files
         if md_file.stem in config["ignoreFileName"]:
             continue
         # Create output path
-        output_path = os.path.join(output_folder, os.path.basename(md_file))
+        output_path = os.path.join(
+            blogMarkdownFolder, os.path.basename(md_file))
 
         # Read and process file
         with open(md_file, 'r', encoding='utf-8') as i_f:

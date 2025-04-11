@@ -1,6 +1,7 @@
 {
-    "inputFolder": "path/to/input",
-    "outputFolder": "path/to/output",
+    "gitFolder": "path/to/gitFolder",
+    "obsidianStoreFolder": "path/to/obsidianStoreFolder",
+    "blogMarkdownFolder": "path/to/blogMarkdownFolder",
     "functionSwitcher": {
         "addDoubleSpace": true,
         "addLineBreak": true
