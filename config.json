@@ -1,0 +1,10 @@
+{
+    "gitFolder": "path/to/gitFolder",
+    "obsidianStoreFolder": "path/to/obsidianStoreFolder",
+    "blogMarkdownFolder": "path/to/blogMarkdownFolder",
+    "functionSwitcher": {
+        "addDoubleSpace": true,
+        "addLineBreak": true
+    },
+    "ignoreFileName": []
+}
