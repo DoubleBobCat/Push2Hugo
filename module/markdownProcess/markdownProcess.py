@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 
-def process_line(line: str) -> str:
+def process_line(config, line: str) -> str:
     """
     Process a single line according to the specified rules.
     Returns the modified line with appropriate formatting.
@@ -16,25 +16,18 @@ def process_line(line: str) -> str:
     return callback
 
 
-def main():
+def main(config):
     """
     Main function that executes the file processing workflow.
     """
-    # Load configuration
-    global config
-    with open('../../config.json', 'r') as c_f:
-        config = json.load(c_f)
-    obsidianStoreFolder = Path(config["obsidianStoreFolder"])
-    blogMarkdownFolder = Path(config["blogMarkdownFolder"])
-
     # Process all markdown files in input directory
-    for md_file in obsidianStoreFolder.rglob('*.md'):
+    for md_file in Path(config["obsidianStoreFolder"]).rglob('*.md'):
         # Skip specified files
         if md_file.stem in config["ignoreFileName"]:
             continue
         # Create output path
         output_path = os.path.join(
-            blogMarkdownFolder, os.path.basename(md_file))
+            Path(config["blogMarkdownFolder"]), os.path.basename(md_file))
 
         # Read and process file
         with open(md_file, 'r', encoding='utf-8') as i_f:
@@ -58,7 +51,7 @@ def main():
             elif stripped_line[0] in ['#', '+', '-', '|']:
                 processed_lines.append(line)
             else:
-                processed_lines.append(process_line(line))
+                processed_lines.append(process_line(config, line))
         i_f.close()
         # Write processed content
         with open(output_path, 'w', encoding='utf-8') as o_f:
@@ -67,4 +60,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # Load configuration
+    global config
+    with open('../../config.json', 'r') as c_f:
+        config = json.load(c_f)
+    main(config)

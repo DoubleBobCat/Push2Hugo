@@ -46,24 +46,16 @@ def run_git_commands(gitFolder: str):
             sys.exit(1)
 
 
-def module_main(gitFolder: str):
-    """Main function as module that run commands."""
+def main(gitFolder: str):
+    """Main function that run commands."""
     check_git_installed()
     run_git_commands(gitFolder)
 
 
-def main():
-    """Main function that run commands."""
-    check_git_installed()
-
+if __name__ == "__main__":
     # Load configuration
     global config
     with open('../../config.json', 'r') as c_f:
         config = json.load(c_f)
     gitFolder = Path(config["gitFolder"])
-
-    run_git_commands(gitFolder)
-
-
-if __name__ == "__main__":
-    main()
+    main(gitFolder)
